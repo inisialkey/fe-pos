@@ -1,0 +1,17 @@
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/icons/ic_launcher_foreground.png
+  color_dark: "#ffffff"
+  image_dark: assets/icons/ic_launcher_foreground.png
+  branding_bottom_padding: 24
+
+  android_gravity: center
+  ios_content_mode: center
+
+  android_12:
+    image: assets/icons/ic_launcher_foreground.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/icons/ic_launcher_foreground.png
+    icon_background_color_dark: "#ffffff"
+
+  web: false

@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "999230150221",
+    "project_id": "point-of-sales-2323a",
+    "storage_bucket": "point-of-sales-2323a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999230150221:android:d78cda148f9bf6f0d3ee04",
+        "android_client_info": {
+          "package_name": "com.inisialkey.pos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv2y9cQ1bid42yCNe8HgfbdqUkxGwsaUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999230150221-2bqbu9mqdigiri9s7u8uqnd20qqaqqul.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inisialkey.pos"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999230150221:android:87a6863e964d916fd3ee04",
+        "android_client_info": {
+          "package_name": "com.inisialkey.pos.stg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv2y9cQ1bid42yCNe8HgfbdqUkxGwsaUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999230150221-2bqbu9mqdigiri9s7u8uqnd20qqaqqul.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inisialkey.pos"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
