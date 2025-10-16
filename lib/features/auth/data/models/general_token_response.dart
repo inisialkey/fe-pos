@@ -8,8 +8,8 @@ part 'general_token_response.g.dart';
 @freezed
 sealed class GeneralTokenResponse with _$GeneralTokenResponse {
   const factory GeneralTokenResponse({
-    @JsonKey(name: 'diagnostic') Diagnostic? diagnostic,
-    @JsonKey(name: 'data') DataGeneralToken? data,
+    Diagnostic? diagnostic,
+    DataGeneralToken? data,
   }) = _GeneralTokenResponse;
 
   const GeneralTokenResponse._();
@@ -23,10 +23,8 @@ sealed class GeneralTokenResponse with _$GeneralTokenResponse {
 
 @freezed
 sealed class DataGeneralToken with _$DataGeneralToken {
-  const factory DataGeneralToken({
-    @JsonKey(name: 'token') String? token,
-    @JsonKey(name: 'tokenType') String? tokenType,
-  }) = _DataGeneralToken;
+  const factory DataGeneralToken({String? token, String? tokenType}) =
+      _DataGeneralToken;
 
   factory DataGeneralToken.fromJson(Map<String, dynamic> json) =>
       _$DataGeneralTokenFromJson(json);

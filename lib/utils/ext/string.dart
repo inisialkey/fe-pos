@@ -20,7 +20,7 @@ extension StringExtension on String {
 
       showToastWidget(
         Toast(
-          bgColor: Theme.of(context).extension<LzyctColors>()!.red,
+          bgColor: Theme.of(context).extension<PosColors>()!.red,
           icon: Icons.error,
           message: message,
           textColor: Colors.white,
@@ -47,7 +47,7 @@ extension StringExtension on String {
       // showToast(msg)
       showToastWidget(
         Toast(
-          bgColor: Theme.of(context).extension<LzyctColors>()!.green,
+          bgColor: Theme.of(context).extension<PosColors>()!.green,
           icon: Icons.check_circle,
           message: message,
           textColor: Colors.white,
@@ -72,7 +72,7 @@ extension StringExtension on String {
 
       showToastWidget(
         Toast(
-          bgColor: Theme.of(context).extension<LzyctColors>()!.pink,
+          bgColor: Theme.of(context).extension<PosColors>()!.pink,
           icon: Icons.info,
           message: message,
           textColor: Colors.white,
@@ -107,5 +107,10 @@ extension StringExtension on String {
     } catch (_) {
       return '-';
     }
+  }
+
+  int get toIntegerFromText {
+    final cleanedText = replaceAll(RegExp('[^0-9]'), '');
+    return int.tryParse(cleanedText) ?? 0;
   }
 }

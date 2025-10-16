@@ -27,8 +27,8 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) => Parent(
     child: RefreshIndicator(
-      color: Theme.of(context).extension<LzyctColors>()!.pink,
-      backgroundColor: Theme.of(context).extension<LzyctColors>()!.background,
+      color: Theme.of(context).extension<PosColors>()!.pink,
+      backgroundColor: Theme.of(context).extension<PosColors>()!.background,
       onRefresh: () => context.read<UsersCubit>().refresh(),
       child: BlocBuilder<UsersCubit, UsersState>(
         builder: (_, state) => switch (state) {

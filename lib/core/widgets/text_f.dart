@@ -122,14 +122,12 @@ class TextFState extends State<TextF> {
                 decoration: BoxDecoration(
                   color: widget.enabled
                       ? widget.backgroundColor ??
-                            Theme.of(
-                              context,
-                            ).extension<LzyctColors>()!.background
-                      : Theme.of(context).extension<LzyctColors>()!.shadow,
+                            Theme.of(context).extension<PosColors>()!.background
+                      : Theme.of(context).extension<PosColors>()!.shadow,
                   border: Border.all(
                     color: _isError
-                        ? Theme.of(context).extension<LzyctColors>()!.red!
-                        : Theme.of(context).extension<LzyctColors>()!.shadow!,
+                        ? Theme.of(context).extension<PosColors>()!.red!
+                        : Theme.of(context).extension<PosColors>()!.shadow!,
                   ),
                   borderRadius: BorderRadius.circular(Dimens.space4),
                 ),
@@ -152,8 +150,8 @@ class TextFState extends State<TextF> {
                 widget.description!,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: _isError
-                      ? Theme.of(context).extension<LzyctColors>()!.red!
-                      : Theme.of(context).extension<LzyctColors>()!.shadow,
+                      ? Theme.of(context).extension<PosColors>()!.red!
+                      : Theme.of(context).extension<PosColors>()!.shadow,
                 ),
               ),
             ),
@@ -169,9 +167,7 @@ class TextFState extends State<TextF> {
                       child: Text(
                         widget.errorMessage ?? '',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Theme.of(
-                            context,
-                          ).extension<LzyctColors>()!.red,
+                          color: Theme.of(context).extension<PosColors>()!.red,
                         ),
                       ),
                     )
@@ -219,8 +215,8 @@ class TextFState extends State<TextF> {
                     widget.labelTextStyle ??
                     Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: _isError
-                          ? Theme.of(context).extension<LzyctColors>()!.red!
-                          : Theme.of(context).extension<LzyctColors>()!.banner!,
+                          ? Theme.of(context).extension<PosColors>()!.red!
+                          : Theme.of(context).extension<PosColors>()!.banner!,
                       overflow: TextOverflow.ellipsis,
                     ),
               ),

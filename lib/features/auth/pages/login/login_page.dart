@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pos/core/core.dart';
 import 'package:pos/features/features.dart';
 import 'package:pos/utils/utils.dart';
@@ -30,42 +32,58 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) => Parent(
-    child: Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 500),
-        child: ListView(
-          shrinkWrap: true,
-          children: [
-            SvgPicture.asset(
-              Images.homeResto,
-              width: Dimens.space100,
-              height: Dimens.space100,
-              colorFilter: ColorFilter.mode(
-                Theme.of(context).primaryColor,
-                BlendMode.srcIn,
+    child: BlocListener<AuthCubit, AuthState>(
+      listener: (_, state) => switch (state) {
+        AuthStateLoading() => context.show(),
+        AuthStateSuccess() => (() {
+          context.dismiss();
+
+          TextInput.finishAutofillContext();
+          context.goNamed(Routes.root.name);
+        })(),
+        AuthStateFailure(:final message) => (() {
+          context.dismiss();
+          message.toToastError(context);
+        })(),
+        _ => {},
+      },
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 500),
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              SvgPicture.asset(
+                Images.homeResto,
+                width: Dimens.space100,
+                height: Dimens.space100,
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).primaryColor,
+                  BlendMode.srcIn,
+                ),
               ),
-            ),
-            SpacerV(value: Dimens.space24),
-            Text(
-              ' Inisialkey Resto',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
+              SpacerV(value: Dimens.space24),
+              Text(
+                ' Inisialkey Resto',
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            SpacerV(value: Dimens.space8),
-            Text(
-              'Akses Login Kasir',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                fontWeight: FontWeight.w400,
-                color: Colors.grey,
+              SpacerV(value: Dimens.space8),
+              Text(
+                'Akses Login Kasir',
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  fontWeight: FontWeight.w400,
+                  color: Colors.grey,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            SpacerV(value: Dimens.space40),
-            _loginForm(),
-          ],
+              SpacerV(value: Dimens.space40),
+              _loginForm(),
+            ],
+          ),
         ),
       ),
     ),

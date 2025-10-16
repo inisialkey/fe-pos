@@ -7,10 +7,8 @@ part 'login_response.g.dart';
 
 @freezed
 sealed class LoginResponse with _$LoginResponse {
-  const factory LoginResponse({
-    @JsonKey(name: 'diagnostic') Diagnostic? diagnostic,
-    @JsonKey(name: 'data') DataLogin? data,
-  }) = _LoginResponse;
+  const factory LoginResponse({Diagnostic? diagnostic, DataLogin? data}) =
+      _LoginResponse;
 
   const LoginResponse._();
 
@@ -23,9 +21,9 @@ sealed class LoginResponse with _$LoginResponse {
 @freezed
 sealed class DataLogin with _$DataLogin {
   const factory DataLogin({
-    @JsonKey(name: 'token') String? token,
-    @JsonKey(name: 'tokenType') String? tokenType,
-    @JsonKey(name: 'refreshToken') String? refreshToken,
+    String? token,
+    String? tokenType,
+    String? refreshToken,
   }) = _DataLogin;
 
   factory DataLogin.fromJson(Map<String, dynamic> json) =>

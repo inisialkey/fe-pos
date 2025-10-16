@@ -22,6 +22,7 @@ class PosApp extends StatelessWidget {
         BlocProvider(create: (_) => sl<SettingsCubit>()..getActiveTheme()),
         BlocProvider(create: (_) => sl<AuthCubit>()),
         BlocProvider(create: (_) => sl<LogoutCubit>()),
+        BlocProvider(create: (_) => sl<SyncProductCubit>()),
       ],
       child: OKToast(
         child: ScreenUtilInit(

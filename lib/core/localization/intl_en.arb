@@ -27,5 +27,7 @@
   "logoutDesc": "Do you want to logout from the app?",
   "yes": "Yes",
   "lastUpdate": "Last Update: ",
-  "name": "Name"
+  "name": "Name",
+  "syncDataProduct": "Sync Data Product",
+  "syncDataOrder": "Sync Data Order"
 }

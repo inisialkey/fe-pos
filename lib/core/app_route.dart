@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pos/dependencies_injection.dart';
 import 'package:pos/features/features.dart';
+import 'package:pos/features/report/presentation/pages/analysis_page.dart';
 import 'package:pos/utils/utils.dart';
 
 enum Routes {
@@ -12,6 +13,9 @@ enum Routes {
 
   /// Home Page
   home('/home'),
+  configuration('/configuration'),
+  report('/report'),
+  analysis('/analysis'),
   dashboard('/dashboard'),
   settings('/settings'),
 
@@ -53,32 +57,49 @@ class AppRoute {
           child: const LoginPage(),
         ),
       ),
-      GoRoute(
-        path: Routes.register.path,
-        name: Routes.register.name,
-        builder: (context, state) => MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (_) => sl<RegisterCubit>()),
-            BlocProvider(create: (_) => sl<ReloadFormCubit>()),
-          ],
-          child: const RegisterPage(),
-        ),
-      ),
-      ShellRoute(
-        builder: (context, state, child) => BlocProvider(
-          create: (context) => sl<MainCubit>(),
-          child: MainPage(child: child),
-        ),
-        routes: [
-          GoRoute(
-            path: Routes.home.path,
-            name: Routes.home.name,
-            builder: (_, state) => const Homepage(),
+
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) =>
+            MainPage(navigationShell: navigationShell),
+        branches: [
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: Routes.home.path,
+                name: Routes.home.name,
+                builder: (context, state) => BlocProvider(
+                  create: (_) => sl<GetLocalProductCubit>(),
+                  child: const Homepage(),
+                ),
+              ),
+            ],
           ),
-          GoRoute(
-            path: Routes.settings.path,
-            name: Routes.settings.name,
-            builder: (context, state) => const SettingsPage(),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: Routes.report.path,
+                name: Routes.report.name,
+                builder: (_, state) => const ReportPage(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: Routes.analysis.path,
+                name: Routes.analysis.name,
+                builder: (_, state) => const AnalysisPage(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: Routes.configuration.path,
+                name: Routes.configuration.name,
+                builder: (_, state) => const ConfigurationPage(),
+              ),
+            ],
           ),
         ],
       ),

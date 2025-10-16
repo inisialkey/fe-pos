@@ -99,7 +99,7 @@ ThemeData themeLight(BuildContext context) => ThemeData(
   iconTheme: const IconThemeData(color: Palette.icon),
   visualDensity: VisualDensity.adaptivePlatformDensity,
   extensions: const <ThemeExtension<dynamic>>[
-    LzyctColors(
+    PosColors(
       background: Palette.background,
       banner: Palette.bannerDark,
       card: Palette.card,
@@ -219,7 +219,7 @@ ThemeData themeDark(BuildContext context) => ThemeData(
   iconTheme: const IconThemeData(color: Palette.iconDark),
   visualDensity: VisualDensity.adaptivePlatformDensity,
   extensions: const <ThemeExtension<dynamic>>[
-    LzyctColors(
+    PosColors(
       background: Palette.backgroundDark,
       banner: Palette.background,
       buttonText: Palette.textDark,
@@ -244,7 +244,7 @@ ThemeData themeDark(BuildContext context) => ThemeData(
   ],
 );
 
-class LzyctColors extends ThemeExtension<LzyctColors> {
+class PosColors extends ThemeExtension<PosColors> {
   final Color? background;
   final Color? banner;
   final Color? card;
@@ -266,7 +266,7 @@ class LzyctColors extends ThemeExtension<LzyctColors> {
   final Color? lavender;
   final Color? red;
 
-  const LzyctColors({
+  const PosColors({
     this.background,
     this.banner,
     this.card,
@@ -290,7 +290,7 @@ class LzyctColors extends ThemeExtension<LzyctColors> {
   });
 
   @override
-  ThemeExtension<LzyctColors> copyWith({
+  ThemeExtension<PosColors> copyWith({
     Color? background,
     Color? banner,
     Color? card,
@@ -311,7 +311,7 @@ class LzyctColors extends ThemeExtension<LzyctColors> {
     Color? blue,
     Color? lavender,
     Color? red,
-  }) => LzyctColors(
+  }) => PosColors(
     background: background ?? this.background,
     banner: banner ?? this.banner,
     card: card ?? this.card,
@@ -335,14 +335,14 @@ class LzyctColors extends ThemeExtension<LzyctColors> {
   );
 
   @override
-  ThemeExtension<LzyctColors> lerp(
-    covariant ThemeExtension<LzyctColors>? other,
+  ThemeExtension<PosColors> lerp(
+    covariant ThemeExtension<PosColors>? other,
     double t,
   ) {
-    if (other is! LzyctColors) {
+    if (other is! PosColors) {
       return this;
     }
-    return LzyctColors(
+    return PosColors(
       banner: Color.lerp(banner, other.banner, t),
       background: Color.lerp(background, other.background, t),
       card: Color.lerp(card, other.card, t),
@@ -393,7 +393,7 @@ class BoxShadows {
   BoxShadow get button => BoxShadow(
     color: Theme.of(
       context,
-    ).extension<LzyctColors>()!.shadow!.withValues(alpha: 0.5),
+    ).extension<PosColors>()!.shadow!.withValues(alpha: 0.5),
     blurRadius: 16.0,
     spreadRadius: 1.0,
   );
@@ -401,25 +401,25 @@ class BoxShadows {
   BoxShadow get card => BoxShadow(
     color: Theme.of(
       context,
-    ).extension<LzyctColors>()!.shadow!.withValues(alpha: 0.5),
+    ).extension<PosColors>()!.shadow!.withValues(alpha: 0.5),
     blurRadius: 5.0,
     spreadRadius: 0.5,
   );
 
   BoxShadow get dialog => BoxShadow(
-    color: Theme.of(context).extension<LzyctColors>()!.shadow!,
+    color: Theme.of(context).extension<PosColors>()!.shadow!,
     offset: const Offset(0, -4),
     blurRadius: 16.0,
   );
 
   BoxShadow get dialogAlt => BoxShadow(
-    color: Theme.of(context).extension<LzyctColors>()!.shadow!,
+    color: Theme.of(context).extension<PosColors>()!.shadow!,
     offset: const Offset(0, 4),
     blurRadius: 16.0,
   );
 
   BoxShadow get buttonMenu => BoxShadow(
-    color: Theme.of(context).extension<LzyctColors>()!.shadow!,
+    color: Theme.of(context).extension<PosColors>()!.shadow!,
     blurRadius: 4.0,
   );
 }

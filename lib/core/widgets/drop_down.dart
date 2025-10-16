@@ -46,10 +46,10 @@ class _DropDownState<T> extends State<DropDown<T>> {
           textTheme: ButtonTextTheme.primary,
           child: DropdownButtonFormField<T>(
             isExpanded: true,
-            dropdownColor: Theme.of(context).extension<LzyctColors>()!.banner,
+            dropdownColor: Theme.of(context).extension<PosColors>()!.banner,
             icon: const Icon(Icons.keyboard_arrow_down),
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).extension<LzyctColors>()!.subtitle,
+              color: Theme.of(context).extension<PosColors>()!.subtitle,
             ),
             decoration: InputDecoration(
               alignLabelWithHint: true,
@@ -57,9 +57,9 @@ class _DropDownState<T> extends State<DropDown<T>> {
               isCollapsed: true,
               filled: true,
               labelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Theme.of(context).extension<LzyctColors>()!.subtitle,
+                color: Theme.of(context).extension<PosColors>()!.subtitle,
               ),
-              fillColor: Theme.of(context).extension<LzyctColors>()!.card,
+              fillColor: Theme.of(context).extension<PosColors>()!.card,
               prefixIcon: Padding(
                 padding: EdgeInsets.only(left: Dimens.space12),
                 child: widget.prefixIcon,
@@ -73,7 +73,7 @@ class _DropDownState<T> extends State<DropDown<T>> {
                 gapPadding: 0,
                 borderRadius: BorderRadius.circular(Dimens.space4),
                 borderSide: BorderSide(
-                  color: Theme.of(context).extension<LzyctColors>()!.card!,
+                  color: Theme.of(context).extension<PosColors>()!.card!,
                 ),
               ),
               border: OutlineInputBorder(
@@ -90,21 +90,21 @@ class _DropDownState<T> extends State<DropDown<T>> {
                 gapPadding: 0,
                 borderRadius: BorderRadius.circular(Dimens.space4),
                 borderSide: BorderSide(
-                  color: Theme.of(context).extension<LzyctColors>()!.red!,
+                  color: Theme.of(context).extension<PosColors>()!.red!,
                 ),
               ),
               errorBorder: OutlineInputBorder(
                 gapPadding: 0,
                 borderRadius: BorderRadius.circular(Dimens.space4),
                 borderSide: BorderSide(
-                  color: Theme.of(context).extension<LzyctColors>()!.red!,
+                  color: Theme.of(context).extension<PosColors>()!.red!,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 gapPadding: 0,
                 borderRadius: BorderRadius.circular(Dimens.space4),
                 borderSide: BorderSide(
-                  color: Theme.of(context).extension<LzyctColors>()!.pink!,
+                  color: Theme.of(context).extension<PosColors>()!.pink!,
                 ),
               ),
             ),

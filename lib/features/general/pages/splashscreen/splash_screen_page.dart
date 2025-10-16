@@ -21,7 +21,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   Widget build(BuildContext context) => Parent(
     child: ColoredBox(
-      color: Theme.of(context).extension<LzyctColors>()!.background!,
+      color: Theme.of(context).extension<PosColors>()!.background!,
       child: Center(
         child: Image.asset(
           Theme.of(context).brightness == Brightness.dark

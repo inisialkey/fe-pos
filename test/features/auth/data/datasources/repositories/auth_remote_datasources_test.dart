@@ -27,62 +27,6 @@ void main() {
     dataSource = AuthRemoteDatasourceImpl(sl<DioClient>());
   });
 
-  group('register', () {
-    const registerParams = RegisterParams(
-      email: 'mudassir@lazycatlabs.com',
-      password: 'Pass123',
-    );
-    final registerModel = RegisterResponse.fromJson(
-      json.decode(jsonReader(pathRegisterResponse200)) as Map<String, dynamic>,
-    );
-
-    test(
-      'should return register success model when response code is 200',
-      () async {
-        /// arrange
-        dioAdapter.onPost(
-          ListAPI.user,
-          (server) => server.reply(
-            200,
-            json.decode(jsonReader(pathRegisterResponse200)),
-          ),
-          data: registerParams.toJson(),
-        );
-
-        /// act
-        final result = await dataSource.register(registerParams);
-
-        /// assert
-        result.fold((l) => expect(l, null), (r) => expect(r, registerModel));
-      },
-    );
-
-    test(
-      'should return register unsuccessful model when response code is 400',
-      () async {
-        /// arrange
-
-        dioAdapter.onPost(
-          ListAPI.user,
-          (server) => server.reply(
-            400,
-            json.decode(jsonReader(pathRegisterResponse400)),
-          ),
-          data: registerParams.toJson(),
-        );
-
-        /// act
-        final result = await dataSource.register(registerParams);
-
-        /// assert
-        result.fold(
-          (l) => expect(l, isA<ServerFailure>()),
-          (r) => expect(r, null),
-        );
-      },
-    );
-  });
-
   group('login', () {
     const loginParams = LoginParams(
       email: 'mudassir@lazycatlabs.com',

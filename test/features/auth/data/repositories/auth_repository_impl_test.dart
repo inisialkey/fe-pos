@@ -20,7 +20,6 @@ void main() {
   late AuthRepositoryImpl authRepositoryImpl;
   late Login login;
   late GeneralToken generalToken;
-  late Register register;
 
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -34,9 +33,7 @@ void main() {
     login = LoginResponse.fromJson(
       json.decode(jsonReader(pathLoginResponse200)) as Map<String, dynamic>,
     ).toEntity();
-    register = RegisterResponse.fromJson(
-      json.decode(jsonReader(pathRegisterResponse200)) as Map<String, dynamic>,
-    ).toEntity();
+
     generalToken = GeneralTokenResponse.fromJson(
       json.decode(jsonReader(pathGeneralTokenResponse200))
           as Map<String, dynamic>,
@@ -128,48 +125,6 @@ void main() {
 
         // assert
         verify(mockAuthRemoteDatasource.login(loginParams));
-        expect(result, const Left(ServerFailure('')));
-      },
-    );
-  });
-
-  group('register', () {
-    const registerParams = RegisterParams(
-      email: 'mudassir@lazycatlabs.com',
-      password: 'pass123',
-    );
-    test('should return register when call data is successful', () async {
-      // arrange
-      when(mockAuthRemoteDatasource.register(registerParams)).thenAnswer(
-        (_) async => Right(
-          RegisterResponse.fromJson(
-            json.decode(jsonReader(pathRegisterResponse200))
-                as Map<String, dynamic>,
-          ),
-        ),
-      );
-
-      // act
-      final result = await authRepositoryImpl.register(registerParams);
-
-      // assert
-      verify(mockAuthRemoteDatasource.register(registerParams));
-      expect(result, equals(Right(register)));
-    });
-
-    test(
-      'should return server failure when call data is unsuccessful',
-      () async {
-        // arrange
-        when(
-          mockAuthRemoteDatasource.register(registerParams),
-        ).thenAnswer((_) async => const Left(ServerFailure('')));
-
-        // act
-        final result = await authRepositoryImpl.register(registerParams);
-
-        // assert
-        verify(mockAuthRemoteDatasource.register(registerParams));
         expect(result, const Left(ServerFailure('')));
       },
     );

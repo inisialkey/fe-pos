@@ -17,4 +17,11 @@ class Images {
       : 'assets/images/ic_logo.png';
 
   static String homeResto = 'assets/icons/home-resto.svg';
+  static String discount = 'assets/icons/discount.svg';
+  static String dashboard = 'assets/icons/dashboard.svg';
+  static String setting = 'assets/icons/setting.svg';
+  static String logout = 'assets/icons/logout.svg';
+  static String kelolaDiskon = 'assets/icons/kelola-diskon.svg';
+  static String kelolaPrinter = 'assets/icons/kelola-printer.svg';
+  static String kelolaPajak = 'assets/icons/kelola-pajak.svg';
 }

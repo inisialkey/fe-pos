@@ -27,5 +27,7 @@
   "logoutDesc": "Apakah anda ingin keluar dari aplikasi?",
   "yes": "Ya",
   "lastUpdate": "Terakhir diperbarui: ",
-  "name": "Nama"
+  "name": "Nama",
+  "syncDataProduct": "Sinkronkan data produk",
+  "syncDataOrder": "Sinkronkan data pesanan"
 }

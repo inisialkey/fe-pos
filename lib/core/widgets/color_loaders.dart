@@ -101,7 +101,7 @@ class _ColorLoaderState extends State<ColorLoader>
                 ),
                 child: Dot(
                   radius: dotRadius,
-                  color: Theme.of(context).extension<LzyctColors>()!.red,
+                  color: Theme.of(context).extension<PosColors>()!.red,
                 ),
               ),
               Transform.translate(
@@ -111,7 +111,7 @@ class _ColorLoaderState extends State<ColorLoader>
                 ),
                 child: Dot(
                   radius: dotRadius,
-                  color: Theme.of(context).extension<LzyctColors>()!.yellow,
+                  color: Theme.of(context).extension<PosColors>()!.yellow,
                 ),
               ),
               Transform.translate(
@@ -121,7 +121,7 @@ class _ColorLoaderState extends State<ColorLoader>
                 ),
                 child: Dot(
                   radius: dotRadius,
-                  color: Theme.of(context).extension<LzyctColors>()!.green,
+                  color: Theme.of(context).extension<PosColors>()!.green,
                 ),
               ),
               Transform.translate(
@@ -131,7 +131,7 @@ class _ColorLoaderState extends State<ColorLoader>
                 ),
                 child: Dot(
                   radius: dotRadius,
-                  color: Theme.of(context).extension<LzyctColors>()!.flamingo,
+                  color: Theme.of(context).extension<PosColors>()!.flamingo,
                 ),
               ),
               Transform.translate(
@@ -141,7 +141,7 @@ class _ColorLoaderState extends State<ColorLoader>
                 ),
                 child: Dot(
                   radius: dotRadius,
-                  color: Theme.of(context).extension<LzyctColors>()!.lavender,
+                  color: Theme.of(context).extension<PosColors>()!.lavender,
                 ),
               ),
               Transform.translate(
@@ -151,7 +151,7 @@ class _ColorLoaderState extends State<ColorLoader>
                 ),
                 child: Dot(
                   radius: dotRadius,
-                  color: Theme.of(context).extension<LzyctColors>()!.pink,
+                  color: Theme.of(context).extension<PosColors>()!.pink,
                 ),
               ),
             ],

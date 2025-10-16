@@ -25,9 +25,12 @@ class Dimens {
   static double space6 = 6.w;
   static double space8 = 8.w;
   static double space12 = 12.w;
+  static double space14 = 14.w;
   static double space16 = 16.w;
+  static double space18 = 18.w;
   static double space20 = 20.w;
   static double space24 = 24.w;
+  static double space25 = 25.w;
   static double space30 = 30.w;
   static double space36 = 36.w;
   static double space40 = 40.w;
@@ -35,6 +38,7 @@ class Dimens {
   static double space50 = 50.w;
   static double space80 = 80.w;
   static double space100 = 100.w;
+  static double space130 = 130.w;
 
   static double selectedIndicatorW = 43.w;
   static double selectedIndicatorSmallW = 28.w;
@@ -53,6 +57,7 @@ class Dimens {
   static double birthdayCalendar = 120.w;
 
   static double buttonH = 40.w;
+  static double buttonRadius = 6.w;
   static double imageW = 110.w;
 
   static const double cornerRadius = 15;
@@ -60,4 +65,5 @@ class Dimens {
 
   static double authPaddingHorizontal = 124.w;
   static double imgSplash = 200.w;
+  static double searchBar = 300.w;
 }
